@@ -6,6 +6,12 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
+use App\Models\User;
+use App\Models\Vendedor;
+use App\Models\Produto;
+use App\Models\Cliente;
+use App\Models\Oportunidade;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -17,69 +23,69 @@ class DatabaseSeeder extends Seeder
     {
 
         // root
-        \App\Models\User::factory()->create([
+        User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@example.com',
             'password' => Hash::make("vitaminaweb")
         ]);
 
         // criar vendedores
-        \App\Models\Vendedor::factory()->create([
+        Vendedor::create([
             'nome' => 'Rick Sanchez',
             'email' => 'rick@sanchez.com',
             'password' => Hash::make('80085')
         ]);
         
-        \App\Models\Vendedor::factory()->create([
+        Vendedor::create([
             'nome' => 'Morty',
             'email' => 'morty@hotmiau.com',
             'password' => Hash::make('jessica')
         ]);
 
         // produtos
-        \App\Models\Produto::factory()->create([
+        Produto::create([
             'nome' => 'Propulsor Galático',
             'vendedor_id' => 1,
         ]);
 
-        \App\Models\Produto::factory()->create([
+        Produto::create([
             'nome' => 'Portal Interdimensional',
             'vendedor_id' => 1,
         ]);
         
-        \App\Models\Produto::factory()->create([
+        Produto::create([
             'nome' => 'Chiclete',
             'vendedor_id' => 2,
         ]);
 
-        \App\Models\Produto::factory()->create([
+        Produto::create([
             'nome' => 'Pack de Figurinhas',
             'vendedor_id' => 2,
         ]);
 
         // clientes
 
-        \App\Models\Cliente::factory()->create([
+        Cliente::create([
             'nome' => 'Jeff',
             'vendedor_id' => 1,
         ]);
 
-        \App\Models\Produto::factory()->create([
+        Cliente::create([
             'nome' => 'BirdPerson',
             'vendedor_id' => 1,
         ]);
 
-        \App\Models\Produto::factory()->create([
+        Cliente::create([
             'nome' => 'Mr. Poopybutthole',
             'vendedor_id' => 1,
         ]);
 
-        \App\Models\Produto::factory()->create([
+        Cliente::create([
             'nome' => 'Planetina',
             'vendedor_id' => 2,
         ]);
 
-        \App\Models\Produto::factory()->create([
+        Cliente::create([
             'nome' => 'Squanchy',
             'vendedor_id' => 2,
         ]);
@@ -87,14 +93,14 @@ class DatabaseSeeder extends Seeder
         // Oportunidades
 
         // Rick > BirdPerson > Propulsor
-        \App\Models\Oportunidade::factory()->create([
+        Oportunidade::create([
             'vendedor_id' => 1,
             'cliente_id' => 2,
             'produto_id' => 1,
         ]);
 
         // Morty > Squanchy > Pack de Figurinhas
-        \App\Models\Oportunidade::factory()->create([
+        Oportunidade::create([
             'vendedor_id' => 2,
             'cliente_id' => 5,
             'produto_id' => 4,

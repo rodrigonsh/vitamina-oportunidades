@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Oportunidade extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'status',
+        'vendedor_id',
+        'produto_id',
+        'cliente_id'
+    ];
 }

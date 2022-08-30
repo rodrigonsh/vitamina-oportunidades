@@ -30,10 +30,10 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
-            $table->foreignId('oportunidade_id');
-            $table->foreign('oportunidade_id')
+            $table->foreignId('produto_id');
+            $table->foreign('produto_id')
                 ->references('id')
-                ->on('oportunidades')
+                ->on('produtos')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 

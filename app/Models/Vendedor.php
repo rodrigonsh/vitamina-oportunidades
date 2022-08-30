@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class Vendedor extends Authenticatable
 {
+
     protected $table = "vendedores";
 
     /**
