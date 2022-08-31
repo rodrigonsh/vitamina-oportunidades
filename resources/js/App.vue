@@ -7,22 +7,27 @@
 
   export default
   {
+
     data()
     { 
       return {
-        count: 0
+        count: 0,
+        user: null
       }
     },
+
     components: {
-    NavBar,
-    ComponenteTeste,
-    Footer
-},
+      ComponenteTeste,
+      NavBar,
+      Footer
+    },
+
     methods: { 
-      doLogin(ev)
+      userLogged(ev)
       {
-          let fm = new FormData(ev.target)
-          console.log("HUM", Object.fromEntries(fm))
+        window.loggedUser = ev
+        this.user = ev,
+        this.$router.push("/user")        
       }
      }
   }
@@ -31,10 +36,13 @@
 
 <template>
 
-  <NavBar />
+  <NavBar :user="user" />
 
-  <main class="container p-3">
-    <router-view></router-view>        
+  <main>
+    <router-view
+      @user-logged="userLogged"
+    >
+    </router-view>        
   </main>
 
   <Footer />

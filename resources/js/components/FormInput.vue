@@ -1,13 +1,27 @@
 <template>
 
     <div class="input-group mb-3">
-        <label for="i-{{name}}" class="input-group-text">{{label}}</label>
+
+        <label :for="'i-'+name" class="input-group-text">{{label}}</label>
+        
         <input
+            v-if="required"
             class="form-control"
-            type="{{type}}"
-            id="i-{{name}}"
-            name="{{name}}"
-            />
+            :type="type"
+            :id="'i-'+name"
+            :name="name"
+            required="required"
+        />
+
+        <input
+            v-else
+            class="form-control"
+            :type="type"
+            :id="'i-'+name"
+            :name="name"
+        />
+
+
     </div>
 
 
@@ -15,10 +29,6 @@
 
 <script>
 export default {
-  props: ['name', 'type', 'label'],
-  created() {
-    // props are exposed on `this`
-    console.log(this.title)
-  }
+  props: ['name', 'type', 'label', 'required']
 }
 </script>

@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('vendedor_id');
-            $table->foreign('vendedor_id')
+            $table->foreignId('user_id');
+            $table->foreign('user_id')
                 ->references('id')
-                ->on('vendedores')
+                ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
                 
@@ -36,7 +36,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('produtos', function (Blueprint $table) {
-            $table->dropForeign(['vendedor_id']);    
+            $table->dropForeign(['user_id']);    
         });
 
         Schema::dropIfExists('produtos');

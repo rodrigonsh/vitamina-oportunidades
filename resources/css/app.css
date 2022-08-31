@@ -20,8 +20,6 @@ main
 footer
 {
     flex-shrink: 0;
-    padding: 16px;
-    text-align: right;
 }
 
 .navbar

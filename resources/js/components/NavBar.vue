@@ -2,35 +2,46 @@
 
 <nav class="navbar navbar-dark bg-primary navbar-expand-md">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><strong>Oportunidades</strong></a>
+    
+    <router-link to="/" class="navbar-brand"><strong>Oportunidades</strong></router-link>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-lg-0">
+    
+    <div class="collapse navbar-collapse ms-auto" id="navbarSupportedContent"> 
+      <ul class="navbar-nav ms-auto mb-lg-0">
+
         <li class="nav-item">
-          <router-link to="/" class="nav-link active" aria-current="page">Home</router-link>
+          <router-link to="/about" class="nav-link">Saiba Mais</router-link>
         </li>
-        <li class="nav-item">
-          <router-link to="/about" class="nav-link">About</router-link>
-        </li>
-        <li class="nav-item dropdown">
+        
+        <li v-if="user != null" class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            <strong>{{ user.name }}</strong>
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <li class="nav-item">
+
+        <!--li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
-        </li>
+        </li-->
+
       </ul>
     </div>
+
   </div>
 </nav>
 
 </template>
+
+<script>
+  export default {
+    props: ['user']
+  }
+  </script>

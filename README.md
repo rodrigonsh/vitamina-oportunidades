@@ -16,11 +16,28 @@ Crie um banco de dados
 
 Renomeie o .env.example e preencha os dados do DB
 
-instale as dependencias do NPM
-
+    composer install
     npm install
+    php artisan key:generate
+    php artisan storage:link
+    php artisan migrate
+    php artisan db:seed
+
+Inicie o Vite
+
     npm run dev
 
 rode o servidor web em outro shell
 
     php artisan serve
+
+# Login
+
+**Rick Sanchez**
+email: rick@sanchez.com
+senha: 80085
+
+**Morty**
+email: morty@hotmiau.com
+senha: jessica
+
