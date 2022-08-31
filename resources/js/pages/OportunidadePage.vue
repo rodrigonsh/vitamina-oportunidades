@@ -17,6 +17,14 @@
 
     </div>
 
+    <div v-else>
+      
+      <p>Status: <strong>{{ getStatus() }}</strong></p>
+
+      <button class='btn btn-primary' @click="$router.back()">&lt; Voltar</button>
+
+    </div>
+
   </div>
 
 </template>
@@ -46,6 +54,12 @@
     },
     methods:
     {
+      getStatus()
+      {
+        if ( this.op.status == 'perdida' ) return "Perdida 😭";
+        if ( this.op.status == 'vencida' ) return "Vencida 🏆";
+        return "WTF 🤯"
+      },
       updateOportunidade(ev)
       {
         let self = this

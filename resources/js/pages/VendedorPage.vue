@@ -58,6 +58,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
+    margin-bottom: 32px;
   }
 
   @media ( max-width: 700px ){

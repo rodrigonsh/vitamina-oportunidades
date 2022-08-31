@@ -2,7 +2,7 @@
 
   <router-link :to="'/oportunidade/'+data.id" class='oportunidade' :status="data.status">
     <h3>Cliente: {{ this.clientName(data.cliente_id) }}</h3>
-    <p>Produto: <strong>{{ this.productName(data.produto_id) }}</strong></p>
+    <p class="mb-0">Produto: <strong>{{ this.productName(data.produto_id) }}</strong></p>
     <p>Data: <strong>{{ this.itemDate(data) }}</strong></p>
     Status: <strong>{{ this.getStatus(data) }}</strong>
   </router-link>
