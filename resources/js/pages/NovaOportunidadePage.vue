@@ -11,14 +11,14 @@
       <FormSelect
         name="cliente_id"
         required="true"
-        :options="getClients"
+        :options="store.clientes"
         label="Cliente"
       />
 
       <FormSelect
         name="produto_id"
         required="true"
-        :options="getProducts"
+        :options="store.produtos"
         label="Produto"
       />
 
@@ -33,20 +33,14 @@
   <script>
 
 import FormSelect from "../components/FormSelect.vue"
+import { store } from "../store.js"
 
 export default
   {
     data() {
-      return {
-        count: 0
-      }
+      return { store }
     },
     components: { FormSelect },
-    computed:
-    {
-      getProducts(){ return window.produtos },
-      getClients(){ return window.clientes },
-    },
     methods: {
       save(ev) {
         let self = this
@@ -63,7 +57,7 @@ export default
           }
 
           let oportunidade = JSON.parse(xhr.responseText)
-          window.loggedUser.oportunidades.push(oportunidade)
+          store.user.oportunidades.push(oportunidade)
 
           self.$router.push('/user')
         })

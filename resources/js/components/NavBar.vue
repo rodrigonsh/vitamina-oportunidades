@@ -16,17 +16,17 @@
           <router-link to="/about" class="nav-link">Saiba Mais</router-link>
         </li>
 
-        <li v-if="user != null" class="nav-item">
+        <li v-if="store.user != null" class="nav-item">
           <router-link to="/produtos" class="nav-link">Produtos</router-link>
         </li>
 
-        <li v-if="user != null" class="nav-item">
+        <li v-if="store.user != null" class="nav-item">
           <router-link to="/clientes" class="nav-link">Clientes</router-link>
         </li>
         
-        <li v-if="user != null" class="nav-item dropdown">
+        <li v-if="store.user != null" class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <strong>{{ user.name }}</strong>
+            <strong>{{ store.user.name }}</strong>
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -49,15 +49,20 @@
 </template>
 
 <script>
+
+  import { store } from "../store.js"
+
   export default {
+    data()
+    {
+      return { store }
+    },
     computed:
     {
       homeLink() {
-        console.log('this.user', this.user)
-        return ( this.user == null ) ? "/" : "/user";
+        return ( this.store.user == null ) ? "/" : "/user";
       }
     },
-    props: ['user']
   }
 </script>
 

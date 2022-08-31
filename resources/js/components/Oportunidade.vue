@@ -10,13 +10,17 @@
 </template>
 
 <script>
+
+  import {store} from '../store.js'
+
   export default {
+    data(){ return{ store } },
     props: ['data', 'root'],
     methods:
     {
-      userName(id){ return window.usuarios[id].nome },
-      clientName(id){ return window.clientes[id].nome },
-      productName(id){ return window.produtos[id].nome },
+      userName(id){ return store.usuarios[id].nome },
+      clientName(id){ return store.clientes[id].nome },
+      productName(id){ return store.produtos[id].nome },
 
       itemDate(data)
       {

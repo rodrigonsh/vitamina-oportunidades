@@ -4,6 +4,7 @@
   import ComponenteTeste from "./components/ComponenteTeste.vue"
   import NavBar from "./components/NavBar.vue"
   import Footer from "./components/Footer.vue"
+  import { store } from './store'
 
   export default
   {
@@ -11,8 +12,7 @@
     data()
     { 
       return {
-        count: 0,
-        user: null
+        store
       }
     },
 
@@ -22,27 +22,16 @@
       Footer
     },
 
-    methods: { 
-      userLogged(ev)
-      {
-        window.loggedUser = ev
-        this.user = ev,
-        this.$router.push("/user")        
-      }
-     }
   }
 
  </script>
 
 <template>
 
-  <NavBar :user="user" />
+  <NavBar />
 
   <main>
-    <router-view
-      @userlogged="userLogged"
-    >
-    </router-view>        
+    <router-view></router-view>        
   </main>
 
   <Footer />

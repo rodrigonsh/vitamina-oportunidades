@@ -37,17 +37,19 @@
 <script>
 
     import FormInput from "../components/FormInput.vue"
+    import { store } from "../store.js"
 
     export default
     {
       data()
       { 
         return {
-          count: 0
+          store
         }
       },
+
       components: { FormInput },
-      emits: ['userlogged'],
+
       methods: { 
         doLogin(ev)
         {
@@ -72,26 +74,28 @@
                 // será razoavelmente pequeno para
                 // este exemplo ... vamos cachear 
                 // os dados
-                window.usuarios = {}
-                window.produtos = {}
-                window.clientes = {}
+                store.usuarios = {}
+                store.produtos = {}
+                store.clientes = {}
 
                 user.usuarios.forEach(u => {
-                    window.usuarios[u.id] = u
+                    store.usuarios[u.id] = u
                 });
                 delete user.usuarios
 
                 user.produtos.forEach(prod => {
-                    window.produtos[prod.id] = prod
+                    store.produtos[prod.id] = prod
                 });
                 delete user.produtos
                 
                 user.clientes.forEach(cli => {
-                    window.clientes[cli.id] = cli
+                    store.clientes[cli.id] = cli
                 });
                 delete user.clientes
 
-                self.$emit('userlogged', user)
+                store.user = user;
+                self.$router.push("/user")        
+
             })
             xhr.open("post", "/login")
             xhr.send(fm)

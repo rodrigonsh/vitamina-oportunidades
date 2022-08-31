@@ -1,23 +1,22 @@
 <template>
 
   <header>
-    <h1>Olá {{ user.name }}</h1>
+    <h1>Olá {{ store.user.name }}</h1>
     <p>Estas são as oportunidades no sistema</p>
   </header>
 
   <div class="container page" id="VendedorPage">
 
-      <FiltroOportunidades v-if="user.root" />
+      <FiltroOportunidades v-if="store.user && store.user.root" />
 
-      <div id="oportunidades">
+      <div v-if="store.user" id="oportunidades">
 
           <router-link to="/nova_oportunidade" class='oportunidade'>Cadastrar oportunidade</router-link>
 
-          <div v-for="data in user.oportunidades">
-              <Oportunidade :data="data" :root="user.root" />
+          <div v-for="data in store.user.oportunidades">
+              <Oportunidade :data="data" :root="store.user.root" />
           </div>
       </div>
-
 
   </div>
 
@@ -27,19 +26,13 @@
 
     import FiltroOportunidades from "../components/FiltroOportunidades.vue"
     import Oportunidade from "../components/Oportunidade.vue"
+    import {store} from "../store.js"
 
     export default
     {
       data()
       { 
-        return {
-          user: {
-            name: '...',
-            email: '...',
-            root: false,
-            oportunidades: []
-          }
-        }
+        return {store}
       },
       mounted()
       {
