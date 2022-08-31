@@ -1,3 +1,5 @@
+<template>
+
 <nav class="navbar navbar-dark bg-primary navbar-expand-md">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><strong>Oportunidades</strong></a>
@@ -7,10 +9,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <router-link to="/" class="nav-link active" aria-current="page">Home</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <router-link to="/about" class="nav-link">About</router-link>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,3 +32,5 @@
     </div>
   </div>
 </nav>
+
+</template>

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Vitamina - Oportunidades</title>
+        <title>🤓 Vitamina - Oportunidades</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,16 +20,8 @@
 
 </head>
 <body>
-    
-    @include('navbar')
-    
-    <div class="container p-3">
-    <div id="app">
-        <button class="btn btn-primary" @click="count++">
-            Count is: @{{ count }}
-        </button>
-    </div>
-    </div>
+ 
+    <div id="app"></div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
