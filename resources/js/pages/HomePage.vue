@@ -59,7 +59,37 @@
             let xhr = new XMLHttpRequest();
             xhr.addEventListener('load', function()
             {
+                if ( xhr.responseText == "SHIT" )
+                {
+                    alert("Login inválido")
+                    return
+                }
+
                 let user = JSON.parse(xhr.responseText)
+
+                // CONSIDERANDO que o dataset
+                // será razoavelmente pequeno para
+                // este exemplo ... vamos cachear 
+                // os dados
+                window.usuarios = {}
+                window.produtos = {}
+                window.clientes = {}
+
+                user.usuarios.forEach(u => {
+                    window.usuarios[u.id] = u
+                });
+                delete user.usuarios
+
+                user.produtos.forEach(prod => {
+                    window.produtos[prod.id] = prod
+                });
+                delete user.produtos
+                
+                user.clientes.forEach(cli => {
+                    window.clientes[cli.id] = cli
+                });
+                delete user.clientes
+
                 self.$emit('user-logged', user)
             })
             xhr.open("post", "/login")

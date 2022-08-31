@@ -1,0 +1,47 @@
+<template>
+
+  <div class='oportunidade'>
+    <h3>Cliente: {{ this.clientName(data.cliente_id) }}</h3>
+    <p>Produto: <strong>{{ this.productName(data.produto_id) }}</strong></p>
+    Status: <strong>{{ this.getStatus(data) }}</strong>
+  </div>
+
+</template>
+
+<script>
+  export default {
+    props: ['data', 'root'],
+    methods:
+    {
+      userName(id){ return window.usuarios[id].nome },
+      clientName(id){ return window.clientes[id].nome },
+      productName(id){ return window.produtos[id].nome },
+      getStatus(data)
+      {
+        if ( data.status == null ) return "Em Aberto 😊";
+        if ( data.status == 'perdida' ) return "Perdida 😭";
+        if ( data.status == 'vencida' ) return "Vencida 😎";
+        return "WTF 🤯"
+      }
+    }
+  }
+</script>
+
+<style>
+  .oportunidade
+  { 
+    max-width: 320px;
+    padding: 16px 24px;
+    margin: 8px 0px;
+    border: 1px solid #eee;
+    background: #f0f0f070;
+    border-radius: 3px;
+  }
+
+  .oportunidade h3
+  {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+</style>

@@ -3,7 +3,7 @@
 <nav class="navbar navbar-dark bg-primary navbar-expand-md">
   <div class="container-fluid">
     
-    <router-link to="/" class="navbar-brand"><strong>Oportunidades</strong></router-link>
+    <router-link :to="homeLink" class="navbar-brand"><strong>Oportunidades</strong></router-link>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,6 +14,14 @@
 
         <li class="nav-item">
           <router-link to="/about" class="nav-link">Saiba Mais</router-link>
+        </li>
+
+        <li v-if="user != null" class="nav-item">
+          <router-link to="/produtos" class="nav-link">Produtos</router-link>
+        </li>
+
+        <li v-if="user != null" class="nav-item">
+          <router-link to="/clientes" class="nav-link">Clientes</router-link>
         </li>
         
         <li v-if="user != null" class="nav-item dropdown">
@@ -42,6 +50,17 @@
 
 <script>
   export default {
+    computed:
+    {
+      homeLink() {
+        console.log('this.user', this.user)
+        return ( this.user == null ) ? "/" : "/user";
+      }
+    },
     props: ['user']
   }
-  </script>
+</script>
+
+<style>
+.nav-link{ color: white; }
+</style>

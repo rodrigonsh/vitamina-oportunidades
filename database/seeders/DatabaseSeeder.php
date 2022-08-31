@@ -45,63 +45,63 @@ class DatabaseSeeder extends Seeder
         // produtos
         Produto::create([
             'nome' => 'Propulsor Galático',
-            'user_id' => 1,
+            'user_id' => 2,
         ]);
 
         Produto::create([
             'nome' => 'Portal Interdimensional',
-            'user_id' => 1,
+            'user_id' => 2,
         ]);
         
         Produto::create([
             'nome' => 'Chiclete',
-            'user_id' => 2,
+            'user_id' => 3,
         ]);
 
         Produto::create([
             'nome' => 'Pack de Figurinhas',
-            'user_id' => 2,
+            'user_id' => 3,
         ]);
 
         // clientes
 
         Cliente::create([
             'nome' => 'Jeff',
-            'user_id' => 1,
+            'user_id' => 2,
         ]);
 
         Cliente::create([
             'nome' => 'BirdPerson',
-            'user_id' => 1,
+            'user_id' => 2,
         ]);
 
         Cliente::create([
             'nome' => 'Mr. Poopybutthole',
-            'user_id' => 1,
+            'user_id' => 2,
         ]);
 
         Cliente::create([
             'nome' => 'Planetina',
-            'user_id' => 2,
+            'user_id' => 3,
         ]);
 
         Cliente::create([
             'nome' => 'Squanchy',
-            'user_id' => 2,
+            'user_id' => 3,
         ]);
 
         // Oportunidades
 
         // Rick > BirdPerson > Propulsor
         Oportunidade::create([
-            'user_id' => 1,
+            'user_id' => 2,
             'cliente_id' => 2,
             'produto_id' => 1,
         ]);
 
         // Morty > Squanchy > Pack de Figurinhas
         Oportunidade::create([
-            'user_id' => 2,
+            'user_id' => 3,
             'cliente_id' => 5,
             'produto_id' => 4,
         ]);
