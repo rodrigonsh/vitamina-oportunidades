@@ -11,7 +11,7 @@
 
       <div v-if="store.user" id="oportunidades">
 
-          <router-link to="/nova_oportunidade" class='oportunidade'>Cadastrar oportunidade</router-link>
+          <router-link to="/nova_oportunidade" class='novaOportunidade'>+ Cadastrar oportunidade</router-link>
 
           <div v-for="data in store.user.oportunidades">
               <Oportunidade :data="data" :root="store.user.root" />
@@ -66,6 +66,29 @@
 
   @media ( max-width: 500px ){
     #oportunidades{ grid-template-columns: repeat(1, 1fr); }
+  }
+
+  .novaOportunidade
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 32px;
+    background: #0d6efd;;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0px 2px 3px #00000075;
+    transition: all 0.2s;
+    }
+
+  .novaOportunidade:hover
+  {
+    color: yellow; 
+    box-shadow: 0px 2px 10px #00000075;
   }
 
 </style>
