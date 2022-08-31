@@ -25,3 +25,4 @@ Route::get('/about', function () {
 
 Route::post('/login', [LoginController::class, 'doLogin'])->name('login.doLogin'); 
 Route::post('/nova_oportunidade', [OportunidadeController::class, 'new'])->name('oportunidade.new'); 
+Route::post('/oportunidade/{id}/updateStatus', [OportunidadeController::class, 'updateStatus'])->name('oportunidade.updateStatus'); 

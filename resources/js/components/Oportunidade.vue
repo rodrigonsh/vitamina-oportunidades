@@ -32,7 +32,7 @@
       {
         if ( data.status == null ) return "Em Aberto 😊";
         if ( data.status == 'perdida' ) return "Perdida 😭";
-        if ( data.status == 'vencida' ) return "Vencida 😎";
+        if ( data.status == 'vencida' ) return "Vencida 🏆";
         return "WTF 🤯"
       }
     }

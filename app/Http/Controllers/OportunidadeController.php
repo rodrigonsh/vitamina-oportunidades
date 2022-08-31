@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\NovaOportunidadeRequest;
+use App\Http\Requests\UpdateOportunidadeStatusRequest;
 use App\Models\Cliente;
 use App\Models\Produto;
 use App\Models\Oportunidade;
@@ -29,6 +30,24 @@ class OportunidadeController extends Controller
         $op->save();
 
         return $op;
+
+    }
+
+    public function updateStatus(UpdateOportunidadeStatusRequest $r, $id)
+    {
+        $input = $r->validated();
+        $user = Auth::user();
+
+        $op = Oportunidade::findOrFail($id);
+        if ( $op->user_id != $user->id ) return "SHIT";
+
+        if ( $input['status'] != "vencida" && $input['status'] != "perdida" )
+        {
+            return "SHIT";
+        }
+
+        $op->status = $input['status'];
+        return $op->save();
 
     }
 

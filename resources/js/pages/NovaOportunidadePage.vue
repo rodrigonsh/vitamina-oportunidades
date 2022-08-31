@@ -57,7 +57,7 @@ export default
           }
 
           let oportunidade = JSON.parse(xhr.responseText)
-          store.user.oportunidades.push(oportunidade)
+          self.store.user.oportunidades.push(oportunidade)
 
           self.$router.push('/user')
         })
