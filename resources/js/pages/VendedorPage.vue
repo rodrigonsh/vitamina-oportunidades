@@ -62,8 +62,17 @@
 
   #oportunidades
   {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
+  }
+
+  @media ( max-width: 700px ){
+    #oportunidades{ grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media ( max-width: 500px ){
+    #oportunidades{ grid-template-columns: repeat(1, 1fr); }
   }
 
 </style>

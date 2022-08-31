@@ -40,7 +40,7 @@
 
   <main>
     <router-view
-      @user-logged="userLogged"
+      @userlogged="userLogged"
     >
     </router-view>        
   </main>

@@ -53,9 +53,6 @@ export default
         let fm = new FormData(ev.target)
         let token = document.querySelector('meta[name="csrf-token"]').content
 
-        console.log('eita')
-        return;
-
         fm.append('_token', token)
 
         let xhr = new XMLHttpRequest();
@@ -68,7 +65,7 @@ export default
           let oportunidade = JSON.parse(xhr.responseText)
           window.loggedUser.oportunidades.push(oportunidade)
 
-          self.$route.push('/user')
+          self.$router.push('/user')
         })
         xhr.open("post", "/nova_oportunidade")
         xhr.send(fm)

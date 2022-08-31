@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OportunidadeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,4 @@ Route::get('/about', function () {
 });
 
 Route::post('/login', [LoginController::class, 'doLogin'])->name('login.doLogin'); 
+Route::post('/nova_oportunidade', [OportunidadeController::class, 'new'])->name('oportunidade.new'); 

@@ -47,6 +47,7 @@
         }
       },
       components: { FormInput },
+      emits: ['userlogged'],
       methods: { 
         doLogin(ev)
         {
@@ -90,7 +91,7 @@
                 });
                 delete user.clientes
 
-                self.$emit('user-logged', user)
+                self.$emit('userlogged', user)
             })
             xhr.open("post", "/login")
             xhr.send(fm)
