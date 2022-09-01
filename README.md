@@ -2,6 +2,8 @@
 
 Este repositório é minha demonstração de desenvolvimento fullstack para a Vitamina.web
 
+Trata-se de um CRM baseado na temática do Rick & Morty
+
 # Requerimentos
 
 php8.1+
@@ -22,16 +24,16 @@ Renomeie o .env.example e preencha os dados do DB
     php artisan storage:link
     php artisan migrate
     php artisan db:seed
-
-Inicie o Vite
-
-    npm run dev
-
-rode o servidor web em outro shell
-
     php artisan serve
 
-# Login
+# Logins
+
+**Admin**
+email: admin@vitaminaweb.com.br
+senha: vitaminaweb
+
+O Admin pode filtrar por vendedores
+
 
 **Rick Sanchez**
 email: rick@sanchez.com

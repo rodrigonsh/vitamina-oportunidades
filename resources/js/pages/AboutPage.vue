@@ -8,9 +8,9 @@
 
         <div class="row">
 
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6" id="fotinha">
 
-                <img class="rounded img-fluid mb-3" src="/img/rodrigo-e-sofia.jpg" />
+                <!--img class="rounded img-fluid mb-3" src="/img/rodrigo-e-sofia.jpg" /-->
 
             </div>
 
@@ -42,6 +42,15 @@
 </template>
 
 <style>
+
+    #fotinha
+    {
+        background-image: url(/img/rodrigo-e-sofia.jpg);
+        background-size: cover;
+        background-position: center;
+        border-radius: 6px;
+    }
+
     blockquote
     {
         font-size: 24px;
