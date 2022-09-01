@@ -21,10 +21,12 @@ Clone o repo
 
 Crie um banco de dados
 
-Renomeie o .env.example e preencha os dados do DB
+Copie o .env.example e preencha os dados do DB
 
+    cp .env.example .env
     composer install
     npm install
+    npm run build
     php artisan key:generate
     php artisan storage:link
     php artisan migrate
