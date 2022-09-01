@@ -4,6 +4,11 @@ Este repositório é minha demonstração de desenvolvimento fullstack para a Vi
 
 Trata-se de um CRM baseado na temática do Rick & Morty
 
+# EXEMPLOS
+
+Como solicitado, na pasta EXEMPLOS eu disponibilizei alguns códigos de 
+projetos antigos
+
 # Requerimentos
 
 php8.1+
