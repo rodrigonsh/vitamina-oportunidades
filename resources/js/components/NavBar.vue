@@ -29,10 +29,9 @@
             <strong>{{ store.user.name }}</strong>
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li @click="this.logout()"><a class="dropdown-item" >Logout</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li @click="this.else()"><a class="dropdown-item" >Something else</a></li>
           </ul>
         </li>
 
@@ -63,6 +62,14 @@
         return ( this.store.user == null ) ? "/" : "/user";
       }
     },
+    methods:{
+      logout()
+      {
+        this.store.user = null;
+        this.$router.go(-1000)
+      },
+      else() { this.$router.push("/else") }
+    }
   }
 </script>
 

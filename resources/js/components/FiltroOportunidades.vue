@@ -4,7 +4,7 @@
 
     <div class="row">
 
-      <div class="col-12 col-md-6">
+      <div v-if="store.user.root" class="col-12 col-md-6">
 
         <div class="input-group">
 

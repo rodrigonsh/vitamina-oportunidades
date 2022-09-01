@@ -6,10 +6,11 @@
             <div>
                 <strong>{{ r[this.col] }}</strong>
             </div>
-            <div v-if="!this.store.user.root" class="actions">
+            <!-- Depois eu penso como fazer essa parte -->
+            <!--div v-if="!this.store.user.root" class="actions">
                 <button class="btn btn-light">✍🏼</button>
                 <button class="btn btn-light">🗑</button>
-            </div>
+            </div-->
         </li>
 
     </ul>

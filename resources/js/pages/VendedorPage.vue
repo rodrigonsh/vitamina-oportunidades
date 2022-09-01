@@ -5,7 +5,7 @@
     <p>Estas são as oportunidades no sistema</p>
   </header>
 
-  <FiltroOportunidades v-if="store.user && store.user.root" />
+  <FiltroOportunidades />
 
   <div class="container page" id="VendedorPage">
 
@@ -17,6 +17,10 @@
           <div v-for="data in store.user.oportunidades">
               <Oportunidade :data="data" :root="store.user.root" />
           </div>
+      </div>
+
+      <div v-if="store.user.oportunidades.length == 0">
+        <p class="fs-3 text-center">😕 Nenhuma oportunidade encontrada!</p>
       </div>
 
   </div>

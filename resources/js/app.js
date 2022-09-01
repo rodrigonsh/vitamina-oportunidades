@@ -7,6 +7,7 @@ import App from './App.vue';
 // pages
 import HomePage from './pages/HomePage.vue'
 import AboutPage from './pages/AboutPage.vue'
+import ElsePage from './pages/ElsePage.vue'
 import VendedorPage from './pages/VendedorPage.vue'
 
 import ProdutosPage from './pages/ProdutosPage.vue'
@@ -24,6 +25,7 @@ const router = createRouter({
     routes: [
         {path: '/', 'name': 'Home', 'component': HomePage},
         {path: '/about', 'name': 'About', 'component': AboutPage},
+        {path: '/else', 'name': 'Else', 'component': ElsePage},
         {path: '/user', 'name': 'User', 'component': VendedorPage},
 
         {path: '/produtos', 'name': 'Produtos', 'component': ProdutosPage},
