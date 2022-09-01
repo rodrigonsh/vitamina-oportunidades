@@ -1,6 +1,7 @@
 <template>
 
   <router-link :to="'/oportunidade/'+data.id" class='oportunidade' :status="data.status">
+    <h3 v-if="root">Vendedor: {{ this.userName(data.user_id) }}</h3>
     <h3>Cliente: {{ this.clientName(data.cliente_id) }}</h3>
     <p class="mb-0">Produto: <strong>{{ this.productName(data.produto_id) }}</strong></p>
     <p>Data: <strong>{{ this.itemDate(data) }}</strong></p>
@@ -18,7 +19,7 @@
     props: ['data', 'root'],
     methods:
     {
-      userName(id){ return store.usuarios[id].nome },
+      userName(id){ return store.usuarios[id].name },
       clientName(id){ return store.clientes[id].nome },
       productName(id){ return store.produtos[id].nome },
 

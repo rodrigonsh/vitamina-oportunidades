@@ -1,17 +1,18 @@
 <template>
 
-  <header>
+  <header v-if="!store.user.root" id="VendedorHeader">
     <h1>Olá {{ store.user.name }}</h1>
     <p>Estas são as oportunidades no sistema</p>
   </header>
 
+  <FiltroOportunidades v-if="store.user && store.user.root" />
+
   <div class="container page" id="VendedorPage">
 
-      <FiltroOportunidades v-if="store.user && store.user.root" />
 
       <div v-if="store.user" id="oportunidades">
 
-          <router-link to="/nova_oportunidade" class='novaOportunidade'>+ Cadastrar oportunidade</router-link>
+          <router-link v-if="!store.user.root" to="/nova_oportunidade" class='novaOportunidade'>+ Cadastrar oportunidade</router-link>
 
           <div v-for="data in store.user.oportunidades">
               <Oportunidade :data="data" :root="store.user.root" />
@@ -52,6 +53,8 @@
     color: white;
     margin-bottom: 32px;
   }
+
+  header#VendedorHeader{ margin-bottom: 0px; }
 
   #oportunidades
   {

@@ -2,11 +2,11 @@
 
     <ul class="listView">
 
-        <li v-for="r in rows">
+        <li v-for="r in this.rows">
             <div>
-                <strong>{{ r[col] }}</strong>
+                <strong>{{ r[this.col] }}</strong>
             </div>
-            <div class="actions">
+            <div v-if="!this.store.user.root" class="actions">
                 <button class="btn btn-light">✍🏼</button>
                 <button class="btn btn-light">🗑</button>
             </div>
@@ -14,12 +14,16 @@
 
     </ul>
 
-</template>
+</template> 
 
 <script>
 
+import {store} from "../store"
+
 export default {
+  data(){ return { store } },
   props: [ 'col', 'rows' ]
+
 }
 
 

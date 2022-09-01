@@ -4,7 +4,7 @@
 
     <header>
         <h1>Produtos</h1>
-        <router-link to="/novo_produto" class="btn btn-primary">+ Produto</router-link>
+        <router-link v-if="!store.user.root" to="/novo_produto" class="btn btn-primary">+ Produto</router-link>
     </header>
 
     <div class="container page">
@@ -30,6 +30,7 @@
     {
         data() {
             return {
+                store,
                 'rows': store.produtos,
             }
         },
